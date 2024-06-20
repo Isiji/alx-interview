@@ -2,9 +2,10 @@
 
 import sys
 
-
-def print_msg(dict_sc, total_file_size):
-    """Print the log stats"""
-    print("File size: {:d}".format(total_file_size))
-    for key, value in sorted(dict_sc.items()):
-        print("{:s}: {:d}".format(key, value))
+def print_stats(status_codes, file_size):
+    """Print stats"""
+    print("File size: {}".format(file_size))
+    for key, value in sorted(status_codes.items()):
+        if value != 0:
+            print("{}: {}".format(key, value))
+    
